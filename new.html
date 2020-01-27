@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SpyrosTest</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+            $("#p-id-1").on("mouseover", callRest);
+        })
+
+
+
+    function callRest(){
+        
+        $.ajax({url:"https://restcountries.eu/rest/v2/name/Greece"}).then(function(apadisi){
+             
+             $("#div-id-1").text(apadisi[0].name);
+             
+        });
+    }
+    </script>
+</head>
+<body>
+
+
+<p id="p-id-1"> p-are ena keimeno </p>
+<div id="div-id-1"> </div>
+
+
+  
+
+</body>
+</html>
